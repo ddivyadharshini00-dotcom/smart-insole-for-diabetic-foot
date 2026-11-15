@@ -1,0 +1,8 @@
+{
+  "name": "NeuroStride",
+  "description": "Smart Diabetic Foot Monitor with live BLE plantar pressure heatmap, TinyML ulcer risk scoring, thermal telemetry, and clinical alerting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

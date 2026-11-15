@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
+}
+
+@keyframes alert-flash {
+  0%, 100% {
+    background-color: rgba(220, 38, 38, 0.94);
+    border-color: rgba(252, 165, 165, 0.75);
+    box-shadow: 0 0 24px rgba(239, 68, 68, 0.45);
+  }
+  50% {
+    background-color: rgba(153, 27, 27, 0.94);
+    border-color: rgba(248, 113, 113, 0.45);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+  }
+}
+
+@keyframes critical-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.85));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(239, 68, 68, 1));
+  }
+}
+
+.animate-alert-flash {
+  animation: alert-flash 1.1s ease-in-out infinite;
+}
+
+.animate-critical-node {
+  animation: critical-pulse 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-alert-flash,
+  .animate-critical-node {
+    animation: none;
+  }
+}
+
+/* Custom sleek dark scrollbar for Android clinical log */
+.clinical-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.clinical-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 9999px;
+}
+.clinical-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.45);
+  border-radius: 9999px;
+}
+.clinical-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.65);
+}
